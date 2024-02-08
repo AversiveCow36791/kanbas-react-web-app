@@ -1,0 +1,183 @@
+.wd-modules,
+.wd-modules * {
+  border-radius: 0%;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.wd-modules {
+  margin: 5px;
+}
+
+.wd-modules > li {
+  background-color: lightgray;
+  border: 1px solid gray !important;
+  border-left: none !important;
+}
+
+.wd-modules > li > div {
+  padding: 6px;
+  border-left: 1px solid gray !important;
+}
+
+.wd-modules > li > ul > li {
+  padding: 5px;
+  border-top: 1px solid gray !important;
+  border-left: 2px solid green;
+}
+
+.wd-modules > li {
+  margin-bottom: 20px;
+}
+
+.wd-course-status {
+  list-style: none;
+  align-items: start;
+  text-align: left;
+  padding:0%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.align-right {
+  align-items: end;
+  text-align: right;
+}
+
+.btn {
+  border-radius: 0;
+  font-size: 15px;
+}
+
+.wd-course-status > li > .btn {
+  width:100%;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.a-none-black {
+  text-decoration: none;
+  color: black;  
+}
+
+.a-none-white {
+  text-decoration: none;
+  color: white;
+}
+
+.a-none-red {
+  text-decoration: none;
+  color: red; 
+}
+
+.a-small-right {
+  font-size: x-small;
+  bottom: 0%;
+}
+
+.wd-comming {
+  list-style: none;
+  align-items: start;
+  text-align: left;
+  padding:0%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.indent {
+  text-indent: 2em;
+  display: inline-block;
+}
+
+.indent2 {
+  text-indent: 6em;
+  display: inline-block;
+}
+
+
+.red {
+  color:red
+}
+
+.btn-outline-dark {
+  background-color:lightgray
+}
+
+.navbar-nav > li > a {
+  text-decoration: none;
+  color: red;
+  padding: 10;
+}
+
+.navbar {
+  padding-bottom: 0;;
+}
+
+.transparent {
+  background-color: transparent;
+  border: none;
+}
+
+.pd-right {
+  padding-right: 10;
+}
+
+
+
+.navbar button[aria-expanded="true"] > span.fa-chevron-down {
+  display: none;
+}
+
+.navbar button > span.fa-times {
+  display: none;
+}
+
+.navbar button[aria-expanded="true"] > span.fa-times {
+  display:block;
+}
+
+.left {
+  position: relative;
+  left:0;
+}
+
+.relative {
+  position: relative;
+}
+
+.containter-fluid {
+  border-width: 0;
+}
+
+.content {
+  min-height: 100%;
+}
+
+/* .max {
+  max-width: 100px;
+}
+
+.col-sm-1 {
+  column-width: 90px;
+  border-width: 0;
+  margin-right: 0;
+  padding-right: 0;
+} */
+
+.center {
+  text-align: center;
+}
+
+.redsm {
+  color: red;
+  font-size: small;
+}
+
+.w-15 {
+  width: 15%;  
+}
+
+.left {
+  text-align: left;
+}

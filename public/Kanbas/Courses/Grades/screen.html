@@ -1,7 +1,16 @@
 <html>
-    <head></head>
+    <head>
+        <link href="/libs/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/Kanbas/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+        <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </head>
     <body>
-    <table style="width:100%">
+    <!-- <table style="width:100%">
         <tr>
             <td valign="top">
                 <ul>
@@ -272,6 +281,335 @@
 
             </td>
         </tr>
-    </table>
+    </table> -->
+        <div class="d-flex">
+            <div class="custom-col-1">
+                <ul class="wd-kanbas-navigation">
+                    <li><a href=#>N</a></li>
+        
+                    <li><a href="/Kanbas/Account/Profile/screen.html"><i class="fa fa-user-circle-o"></i>Account</a></li>
+        
+                    <li>
+                        <a href="/Kanbas/Dashboard/screen.html"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+        
+                    <li class="wd-active"><a href="/Kanbas/Courses/Home/screen.html"><i class="fa fa-book"></i>Courses</a></li>
+        
+                    <li><a href="#"><i class="fa fa-calendar"></i>Calendar</a></li>
+        
+                    <li><a href="#"><i class="fa fa-envelope-open-o"></i></br>Inbox</a></li>
+        
+                    <li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>History</a></li>
+        
+                    <li><a href="#"><i class="fa fa-desktop"></i>Studio</a></li>
+        
+                    <li><a href="#"><i class="fa fa-share-square-o"></i>Commons</a></li>
+        
+                    <li><a href="#"><i class="fa fa-question-circle-o"></i><br/>Help</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <div class="d-none d-md-block row py-3">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="border-bottom d-flex justify-content-between pb-2">
+                      <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><i class="fa fa-bars red ps-0 pe-1 "></i><a class="a-none-red ms-2" href="/Kanbas/Courses/Home/screen.html">CS5610.36915.202430</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Grades</li>
+                      </ol> </nav>
+                </div>
+
+                <div class="row">
+                    <div class="col-1 mt-2">
+                            <p class="smallest"><em>202430_7 Spring 2024 Semest...</em></p>
+                        <ul class="wd-navigation">
+                            <li>
+                            <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                            <li>
+                            <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                            </li>
+                            <li><a href="http://piazza.com">Piazza</a></li>
+                            <li><a href="#">Zoom</a></li>
+                            <li>
+                            <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                            </li>
+                            <li><a href="#">Quizzes</a></li>
+                            <li class="wd-active"><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                            <li><a href="#">People</a></li>
+                            <li><a href="#">Panopto Video</a></li>
+                            <li><a href="#">Discussions</a></li>
+                            <li><a href="#">Announcements</a></li>
+                            <li><a href="#">Pages</a></li>
+                            <li><a href="#">Files</a></li>
+                            <li><a href="#">Rubrics</a></li>
+                            <li><a href="#">Outcomes</a></li>
+                            <li><a href="#">Collaborations</a></li>
+                            <li><a href="#">Syllabus</a></li>
+                            <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+                        </u1>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <div class="row flex-row-reverse">
+                            <div class="col-auto">
+                            <div class="inline">
+                            <select class="form-select inline" id="Grade">
+                                <option selected value="Gradebook">Gradebook</option>
+                                <option value="Change Gradebook">ChangeGradebook</option>
+                                <option value="Traditional Gradebook">Traditional Gradebook</option>
+                                <option value="Individual Gradebook">Individual Gradebook</option>
+                            </select>
+                            </div> 
+                            <button type="button" class="btn btn-outline-dark light-gray rounded"><i class="fa fa-download fa-rotate-270"></i> Import</button>
+                            
+                            <div class="dropdown inline">
+                                <button class="btn btn-outline-dark light-gray rounded dropdown-toggle" type="button" id="exportmenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-upload fa-rotate-270 "></i> Export
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportmenu">
+                                    <li><a class="dropdown-item" href=#>Export</a></li>
+                                    <li><a class="dropdown-item" href=#>Export Current Gradebook View</a></li>
+                                    <li><a class="dropdown-item" href=#>Export Entire Gradebook</a></li>
+                                </ul>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark light-gray rounded py-2"><i class="fa fa-cog"></i></button>
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col">
+                            <label class="form-label"><b>Student Names</b></label>
+                            <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i class="fa fa-search"></i></span>
+                            <input id="Student" placeholder="Search Students" class="form-control border-end-0 border-start-0">
+                            <span class="input-group-text bg-white border-start-0"><i class="fa fa-angle-down"></i></span>
+                            </div>
+                            </div>
+                            
+                            <div class="col">
+                            <label class="form-label"><b>Assignment Names</b></label>
+                            <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i class="fa fa-search"></i></span>
+                            <input id="Assignment" placeholder="Search Assignments" class="form-control border-end-0 border-start-0">
+                            <span class="input-group-text bg-white border-start-0"><i class="fa fa-angle-down"></i></span>
+                            </div>                          
+                        </div>
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <button type="button" class="btn btn-outline-dark rounded"><i class="fa fa-filter"></i> Apply Filters</button>
+                            </div>
+                        </div>
+                        <div class="row ms-1 mt-2">
+                            <div class="table-responsive">
+                            <table class="table table-striped-custom table-bordered">
+                                <thead>
+                                    <tr class="center w-25 table-light">
+                                        <th class="left">Student Name</th>
+                                        <th class="center">A1 SETUP Out of 100</th>
+                                        <th class="align-middle">A2 HTML Out of 100</th>
+                                        <th class="align-middle">A3 CSS Out of 100</th>
+                                        <th>A4 BOOTSTRAP Out of 100</th>
+                                        <th>A5 JAVASCRIPT Out of 100</th>
+                                        <th>A6 REACT Out of 100</th>
+                                        <th>A7 REDUX Out of 100</th>
+                                        <th>A8 NODE Out of 100</th>
+                                        <th>A9 MONGO Out of 100</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="center">
+                                    <tr>
+                                        <td class="w-15 left"><span class="redsm">Alice Wonderland</span></td>
+                                        <td>98%</td>
+                                        <td>89%</td>
+                                        <td>87%</td>
+                                        <td>90%</td>
+                                        <td>89%</td>
+                                        <td>94%</td>
+                                        <td>88%</td>
+                                        <td>87%</td>
+                                        <td>100%</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Princess Leia</span></td>
+                                        <td>98%</td>
+                                        <td>80%</td>
+                                        <td>87%</td>
+                                        <td>86%</td>
+                                        <td>100%</td>
+                                        <td>94%</td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control py-0" value="85%">
+                                            </div>
+                                        </td>
+                                        <td>84%</td>
+                                        <td>92%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Luke Skywalker</span></td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control py-0" value="99%">
+                                            </div>
+                                        </td>
+                                        <td>88%</td>
+                                        <td>97%</td>
+                                        <td>82%</td>
+                                        <td>96%</td>
+                                        <td>93%</td>
+                                        <td>95%</td>
+                                        <td>100%</td>
+                                        <td>93%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Han Solo</span></td>
+                                        <td>83%</td>
+                                        <td>99%</td>
+                                        <td>94%</td>
+                                        <td>98%</td>
+                                        <td>86%</td>
+                                        <td>85%</td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control py-0" value="86%">
+                                            </div>
+                                        </td>
+                                        <td>80%</td>
+                                        <td>84%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Lando Calresian</span></td>
+                                        <td>83%</td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control py-0" value="92%">
+                                            </div>
+                                        </td>
+                                        <td>80%</td>
+                                        <td>80%</td>
+                                        <td>92%</td>
+                                        <td>92%</td>
+                                        <td>94%</td>
+                                        <td>87%</td>
+                                        <td>95%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Boba Fet</span></td>
+                                        <td>85%</td>
+                                        <td>89%</td>
+                                        <td>94%</td>
+                                        <td>83%</td>
+                                        <td>83%</td>
+                                        <td>84%</td>
+                                        <td>91%</td>
+                                        <td>87%</td>
+                                        <td>96%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Darth Vader</span></td>
+                                        <td>81%</td>
+                                        <td>81%</td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control py-0" value="96%">
+                                            </div>
+                                        </td>
+                                        <td>80%</td>
+                                        <td>89%</td>
+                                        <td>88%</td>
+                                        <td>82%</td>
+                                        <td>80%</td>
+                                        <td>82%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Obi-Wan Kenobi</span></td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control py-0" value="85%">
+                                            </div>
+                                        </td>
+                                        <td>99%</td>
+                                        <td>87%</td>
+                                        <td>82%</td>
+                                        <td>88%</td>
+                                        <td>83%</td>
+                                        <td>88%</td>
+                                        <td>92%</td>
+                                        <td>80%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">R2-D2</span></td>
+                                        <td>81%</td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control" value="92%">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control" value="82%">
+                                            </div>
+                                        </td>
+                                        <td>86%</td>
+                                        <td>83%</td>
+                                        <td>
+                                            <div class="col-10 ps-4">
+                                            <input class="form-control" value="84%">
+                                            </div>
+                                        </td>
+                                        <td>98%</td>
+                                        <td>85%</td>
+                                        <td>96%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">C-3PO</span></td>
+                                        <td>94%</td>
+                                        <td>98%</td>
+                                        <td>83%</td>
+                                        <td>83%</td>
+                                        <td>100%</td>
+                                        <td>96%</td>
+                                        <td>96%</td>
+                                        <td>85%</td>
+                                        <td>87%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Yoda</span></td>
+                                        <td>80%</td>
+                                        <td>89%</td>
+                                        <td>99%</td>
+                                        <td>89%</td>
+                                        <td>96%</td>
+                                        <td>85%</td>
+                                        <td>96%</td>
+                                        <td>92%</td>
+                                        <td>85%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="left"><span class="redsm">Admiral Ackbar</span></td>
+                                        <td>82%</td>
+                                        <td>88%</td>
+                                        <td>95%</td>
+                                        <td>100%</td>
+                                        <td>
+                                            <div class="col-9 ps-5 py-0 my-0">
+                                            <input class="form-control py-1" value="93%">
+                                            </div>
+                                        </td>
+                                        <td>98%</td>
+                                        <td>85%</td>
+                                        <td>87%</td>
+                                        <td>99%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    </div>
+                </div>
+        </div>
     </body>
 </html>
