@@ -1,10 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import { FaBan,FaCheckCircle,FaBullseye,FaBullhorn,FaExclamation, FaCalendar, FaBell, FaFile, FaChartBar, FaUpload } from "react-icons/fa";
 import "../index.css";
 import "./try.css";
+import { assignments } from "../../Database";
 
 
 function Status() {
+
+  const { courseId } = useParams();
+const assignmentList = assignments.filter(
+  (assignment) => assignment.course === courseId);
+
 return (
 <div className="d-none d-xl-block">
 <h5>Course Status</h5><hr/>
@@ -31,7 +37,8 @@ return (
     <div className="col mb-2">
       <p className="fs-6">To Do</p> <hr/>
   <ul className="wd-comming">
-      <li><Link className="a-none-red" to="#"><FaExclamation/> Assignment 1</Link></li>
+      {assignmentList.map((assignment) => (
+      <li><Link className="a-none-red" to={`/Kanbas/Courses/${courseId}/Assignments/`}><FaExclamation/> {assignment.title}</Link></li>))}
   </ul>
   </div>
 
