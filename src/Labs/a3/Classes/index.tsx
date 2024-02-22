@@ -16,7 +16,7 @@ function Classes() {
 
      <div className={`${dangerous ? 'wd-bg-red' : 'wd-bg-green'}
                                      wd-fg-black wd-padding-10px`}>
-       Dangerous background
+       Dangerous background (dangerous=false)
      </div>
      <div className={`wd-bg-${color} wd-fg-black wd-padding-10px`}>
        Dynamic Blue background
