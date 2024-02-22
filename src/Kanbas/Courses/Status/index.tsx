@@ -38,7 +38,7 @@ return (
       <p className="fs-6">To Do</p> <hr/>
   <ul className="wd-comming">
       {assignmentList.map((assignment) => (
-      <li><Link className="a-none-red" to={`/Kanbas/Courses/${courseId}/Assignments/`}><FaExclamation/> {assignment.title}</Link></li>))}
+      <li><Link className="a-none-red" to={`/Kanbas/Courses/${courseId}/Assignments`}><FaExclamation/> {assignment.title}</Link></li>))}
   </ul>
   </div>
 
