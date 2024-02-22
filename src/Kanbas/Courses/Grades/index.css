@@ -1,0 +1,29 @@
+.table-striped-custom tbody tr:nth-child(odd) * {
+    background-color: white;
+}
+  
+.table-striped-custom tbody tr:nth-child(even) * {
+background-color: #f2f2f2;
+}
+
+
+.redsm {
+  color: red;
+}
+
+
+.inline {
+    display: inline-block;
+}
+
+.light-gray {
+    background-color: rgb(171, 168, 165);
+}
+  
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
