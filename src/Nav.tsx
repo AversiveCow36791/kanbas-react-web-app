@@ -4,6 +4,7 @@ function Nav() {
  return (
    <nav className="nav nav-tabs mt-2">
      <Link className={`nav-link ${pathname.includes("a3") ? "active" : ""}`} to="/Labs/a3">A3</Link>
+     <Link className="nav-link" to="/Labs/a4">A4</Link>
      <Link className={`nav-link ${pathname.includes("Kanbas") ? "active" : ""}`} to="/Kanbas">Kanbas</Link>
      <Link className={`nav-link ${pathname.includes("hello") ? "active" : ""}`} to="/hello">Hello</Link>
    </nav>
