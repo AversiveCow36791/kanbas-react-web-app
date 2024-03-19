@@ -10,7 +10,7 @@ function Counter() {
         Up
       </button>
       <button className="btn btn-danger"
-        onClick={() => setCount(count + 1)}>
+        onClick={() => setCount(count - 1)}>
         Down
       </button>
     </div>

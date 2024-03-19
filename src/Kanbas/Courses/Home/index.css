@@ -1,0 +1,16 @@
+.navbar button.btn-dark.transparent[aria-expanded="true"] > span:nth-child(1),
+.navbar button.btn-dark.transparent[aria-expanded="true"] > span:nth-child(2) {
+    display: none;
+}
+/* 
+.navbar button.btn-dark.transparent > span:nth-child(1) {
+    display: none;
+} */
+
+.navbar button.btn-dark.transparent > span:nth-child(2) {
+    display: none;
+}
+
+.navbar button.btn-dark.transparent[aria-expanded="true"] > span:nth-child(2) {
+    display: block;
+}

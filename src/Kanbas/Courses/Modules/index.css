@@ -195,3 +195,7 @@
 .green {
   border-left: 2px solid green;
 }
+
+.edit {  background-color: orange;
+  border: 1px solid blue !important;
+  border-left: 1px !important;}

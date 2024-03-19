@@ -1,9 +1,10 @@
 import ModuleList from "../Modules/List";
 import Status from "../Status";
 
+
 function Home() {
   return (
-    <div>
+  <div>
       <div className="row flex-grow">
       <div className="col flex-grow"><ModuleList /></div>
       <div className="col-3"><Status/></div>

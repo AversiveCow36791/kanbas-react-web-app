@@ -12,9 +12,11 @@ import path from "path";
 import AssignmentEditor from "./Assignments/Editor";
 import { assignments } from "../../Kanbas/Database";
 import Grades from "./Grades";
+import MyWebPage from "./Home/MyWebPage";
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 
-function Courses() {
+function Courses( {courses }: { courses: any[]; }) {
     const { courseId } = useParams();
     const course = courses.find((course) => course._id === courseId);
     const { pathname } = useLocation();
@@ -30,8 +32,21 @@ function Courses() {
     }    
 
     return (
+
+
+      
+
+
+
+
+
       <div>
         
+        <MyWebPage/>
+
+
+
+
         <div className="d-none d-md-block">
         <nav aria-label="breadcrumb" className="border-bottom d-flex justify-content-between custom-breadcrumb ms-3">
         <ol className="breadcrumb mb-0">

@@ -1,14 +1,49 @@
 import React from "react";
 import { FaCheckCircle, FaEllipsisV, FaPenSquare, FaPencilAlt, FaPencilRuler, FaPlus, FaPlusCircle, FaRegFileWord } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { assignments } from "../../Database";
 import "./index.css";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment,
+} from "./assignmentsReducer";
+import { KanbasState } from "../../store";
+import { useState } from "react";
+import { Modal } from 'react-bootstrap';
+
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignmentList = assignments.filter(
-    (assignment) => assignment.course === courseId);
+  const assignmentList = useSelector((state: KanbasState) =>
+    state.assignmentsReducer.assignments).filter(
+      (assignment) => assignment.course === courseId);
+  const assignment = useSelector((state: KanbasState) =>
+    state.assignmentsReducer.assignment);
+  const dispatch = useDispatch();
+  const randomId = new Date().getTime().toString();
+  console.log(randomId);
+  const navigate = useNavigate();
+
+  // const [showDeleteModal, setShowDeleteModal] = useState(false);
+  // const handleShowDeleteModal = (assignmentId: string) => {
+  //   setAssignmentToDelete(assignmentId);
+  //   setShowDeleteModal(true);
+  // };
   
+  // const handleDeleteConfirmation = () => {
+  //   dispatch(deleteAssignment(assignment));
+  //   setShowDeleteModal(false);
+  // };
+  
+  // const handleCancelDelete = () => {
+  //   setShowDeleteModal(false);
+  // };
+  
+
     return (
     <>
         
@@ -18,20 +53,20 @@ function Assignments() {
             <div className="col-5 flex-grow-1">
                 <input id="Assignment" className="form-control w-50" placeholder="Search for Assignments"/>
             </div>
-            <div className="col flex-grow-2" >
-                                <span className="float-end">
-                                <button type="button" className="btn btn-outline-dark rounded mx-1" style={{backgroundColor:"rgb(171, 168, 165)"}}><FaPlus/> Group</button>
-                                <button type="button" className="btn btn-danger rounded mx-1"><FaPlus/> Assignment</button>
-                                <div className="dropdown ms-1" style={{display:"inline"}}>
-                                    <button type="button" className="btn btn-outline-dark rounded"style={{backgroundColor:"rgb(171, 168, 165)"}} data-bs-toggle="dropdown">
-                                        <FaEllipsisV/>
-                                    </button>
-                                    <ul className="dropdown-menu">
-                                    <li><Link className="dropdown-item" to="#">Edit Assignment Dates</Link></li>
-                                    </ul>
-                                </div>
-                                </span>
+            <div className="col flex-grow-2">
+              <span className="float-end">
+                <button type="button" className="btn btn-outline-dark rounded mx-1" style={{backgroundColor:"rgb(171, 168, 165)"}}><FaPlus/> Group</button>
+                <button type="button" className="btn btn-danger rounded mx-1" onClick={() => navigate(`/Kanbas/Courses/${courseId}/Assignments/${randomId}`)}><FaPlus/> Assignment</button>
+                <div className="dropdown ms-1" style={{display:"inline"}}>
+                  <button type="button" className="btn btn-outline-dark rounded" style={{backgroundColor:"rgb(171, 168, 165)"}} data-bs-toggle="dropdown">
+                    <FaEllipsisV/>
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li><Link className="dropdown-item" to="#">Edit Assignment Dates</Link></li>
+                  </ul>
                 </div>
+              </span>
+            </div>
         </div>
 
         <div className="row py-2"><hr/></div>
@@ -57,8 +92,23 @@ function Assignments() {
                                         <p className="small"><b>Due:</b> Sep 18 2022 at 11:59pm | 100 pts</p>
                                     </div>
                 <span className="ms-auto">
+                {/* <button onClick={() => handleShowDeleteModal(assignment._id)}>Delete</button> */}
                   <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
               </li>))}
+              {/* <Modal show={showDeleteModal} onHide={handleCancelDelete}>
+      <Modal.Header closeButton>
+        <Modal.Title>Confirm Deletion</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>Are you sure you want to remove this assignment?</Modal.Body>
+      <Modal.Footer>
+        <button onClick={handleCancelDelete}>
+          No
+        </button>
+        <button onClick={handleDeleteConfirmation}>
+          Yes
+        </button>
+      </Modal.Footer>
+    </Modal> */}
           </ul>
         </li>
         <li className="list-group-item p-0">
@@ -129,3 +179,7 @@ export default Assignments;
 
 
  */}
+function setAssignmentToDelete(assignmentId: string) {
+  throw new Error("Function not implemented.");
+}
+

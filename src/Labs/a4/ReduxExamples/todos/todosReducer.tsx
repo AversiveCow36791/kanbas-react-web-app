@@ -1,10 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
- 
+import initialData from "./todos.json"
+
 const initialState = {
-  todos: [
-    { id: "1", title: "Learn React" },
-    { id: "2", title: "Learn Node" },
-  ],
+  todos: initialData,
   todo: { title: "Learn Mongo" },
 };
 const todosSlice = createSlice({
@@ -12,6 +10,7 @@ const todosSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
+      console.log(state,action)
       const newTodos = [
         ...state.todos,
         { ...action.payload, id: new Date().getTime().toString() },

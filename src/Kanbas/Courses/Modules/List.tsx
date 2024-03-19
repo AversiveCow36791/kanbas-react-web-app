@@ -4,10 +4,23 @@ import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle, FaPlus } from "react-icons/fa";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addModule,
+  deleteModule,
+  updateModule,
+  setModule,
+} from "./reducer";
+import { KanbasState } from "../../store";
+
 function ModuleList() {
   const { courseId } = useParams();
-  const modulesList = modules.filter((module) => module.course === courseId);
-  console.log(modules);
+  const moduleList = useSelector((state: KanbasState) => 
+    state.modulesReducer.modules);
+  const module = useSelector((state: KanbasState) => 
+    state.modulesReducer.module);
+  const dispatch = useDispatch();
+
   return (
     <div>
         <div className="align-right p-1 border-bottom pb-2">
@@ -26,21 +39,61 @@ function ModuleList() {
                 </div>
 
                 
+      <div className="border border-dark my-3 px-3 rounded" style={{backgroundColor:"lightblue"}}>
+      <div className="row py-0">
+      <h6>Module Edit or Add</h6>
+      </div>
+      <div className="row align-items-center">
+          <div className="col">
+            <div className="row">
+            <div className="col">
+            <button className="btn btn-success rounded mx-1 py-1" onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+              Add
+            </button>
+            <button className="btn btn-danger rounded mx-1 py-1" onClick={() => dispatch(updateModule(module))}>
+              Update
+            </button>
+            </div>
+            <div className="col">
+            <label className="ms-4 py-1 me-0">Module Name</label>
+            <input className="form-control rounded ms-4 py-1 me-0" style={{width:210}} value={module.name} onChange={(e) => dispatch(setModule({ ...module, name: e.target.value }))} />
+            </div>
+          </div>
+          </div>
+          <div className="col pb-1">
+          <label>Description</label>
+            <textarea className="form-control rounded mx-1" value={module.description} onChange={(e) => dispatch(setModule({ ...module, description: e.target.value }))}></textarea>
+          </div>
+      </div>
+      </div>
+
       <ul className="list-group wd-modules">
-        {modulesList.map((module) => (
+        {moduleList.filter((module) => module.course === courseId).map((module) => (
           <li
             className="list-group-item p-0 rounded-0">
+
+
             <div>
               <FaEllipsisV className="me-2" />
               {module.name}
               <span className="float-end">
+              <button className="btn btn-success rounded mx-1 py-0"
+              onClick={() => dispatch(setModule(module))}>
+              Edit
+            </button>
+
+            <button className="btn btn-danger rounded mx-1 py-0"
+              onClick={() => dispatch(deleteModule(module._id))}>
+              Delete
+            </button>
+
                 <FaCheckCircle className="text-success" />
                 <FaPlusCircle className="ms-2" />
                 <FaEllipsisV className="ms-2" />
               </span>
             </div>
 
-            {module.lessons?.map((lesson) => (
+            {module.lessons?.map((lesson: { _id: string, name: string, description: string }) => (
               <ul className="list-group">
                   <li className="list-group-item p-0 rounded-0">
                     <FaEllipsisV className="me-2" />
@@ -72,4 +125,3 @@ function ModuleList() {
   );
 }
 export default ModuleList;
-
