@@ -10,10 +10,13 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import path from "path";
 import AssignmentEditor from "./Assignments/Editor";
-import { assignments } from "../../Kanbas/Database";
+import * as db from "../../Kanbas/Database";
 import Grades from "./Grades";
 import MyWebPage from "./Home/MyWebPage";
 import 'bootstrap/dist/js/bootstrap.min.js';
+import { KanbasState } from "../store";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 
 function Courses( {courses }: { courses: any[]; }) {
@@ -23,13 +26,17 @@ function Courses( {courses }: { courses: any[]; }) {
 
     var pathValues = pathname.split('/');
     var breadcrumb = pathValues[4];
-    
+
+    const assignmentList = useSelector((state: KanbasState) => 
+    state.assignmentsReducer.assignments);
     if(pathValues.length == 6){
-    
-      const assignmentList = assignments.filter(
-        (assignment) => assignment._id === pathValues[5]);
-        breadcrumb = "Assignments > " + assignmentList.map((assignment) => assignment.title);
-    }    
+    //   const assignmentList = db.assignments.filter(
+    //     (assignment) => assignment._id === pathValues[5]);
+    //     breadcrumb = "Assignments > " + assignmentList.map((assignment) => assignment.title);
+    // }    
+    const assignment = assignmentList.find((assignment) => assignment._id === pathValues[5]);
+    breadcrumb = "Assignments > " + (assignment?.title || "New Assignment");
+    }
 
     return (
 

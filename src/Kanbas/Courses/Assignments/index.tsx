@@ -13,37 +13,29 @@ import {
 } from "./assignmentsReducer";
 import { KanbasState } from "../../store";
 import { useState } from "react";
-import { Modal } from 'react-bootstrap';
 
 
 function Assignments() {
   const { courseId } = useParams();
   const assignmentList = useSelector((state: KanbasState) =>
-    state.assignmentsReducer.assignments).filter(
-      (assignment) => assignment.course === courseId);
-  const assignment = useSelector((state: KanbasState) =>
-    state.assignmentsReducer.assignment);
+    state.assignmentsReducer.assignments)
+    .filter(
+      (assignment) => assignment.course === courseId)
+      ;
   const dispatch = useDispatch();
   const randomId = new Date().getTime().toString();
-  console.log(randomId);
   const navigate = useNavigate();
 
-  // const [showDeleteModal, setShowDeleteModal] = useState(false);
-  // const handleShowDeleteModal = (assignmentId: string) => {
-  //   setAssignmentToDelete(assignmentId);
-  //   setShowDeleteModal(true);
-  // };
-  
-  // const handleDeleteConfirmation = () => {
-  //   dispatch(deleteAssignment(assignment));
-  //   setShowDeleteModal(false);
-  // };
-  
-  // const handleCancelDelete = () => {
-  //   setShowDeleteModal(false);
-  // };
-  
+  const [assignmentToDelete, setAssignmentToDelete] = useState(null);
 
+  const handleShowDelete = (assignmentId: string) => {
+    const confirm = window.confirm("Are you sure you want to delete this assignment?");
+
+    if (confirm) {
+      dispatch(deleteAssignment(assignmentId));
+    }
+
+  };
     return (
     <>
         
@@ -88,27 +80,14 @@ function Assignments() {
                 <FaEllipsisV className="me-2" />
                 <FaPencilAlt className="me-2 green" />
                    <div className="assign">
-                   <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} className="a-none-black">{assignment.title}</Link>        <p className="small border-end border-2">{assignment.title} - Week starting on Monday September 5th Module </p>
-                                        <p className="small"><b>Due:</b> Sep 18 2022 at 11:59pm | 100 pts</p>
+                   <Link to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`} className="a-none-black">{assignment.title} </Link>        <p className="small border-end border-2">{assignment.title} - Week starting on {assignment.availableFromDate} </p>
+                                        <p className="small"><b>Due:</b> {assignment.dueDate} at 11:59pm | {assignment.points} pts</p>
                                     </div>
                 <span className="ms-auto">
-                {/* <button onClick={() => handleShowDeleteModal(assignment._id)}>Delete</button> */}
+                <button className="btn btn-success py-0 px-1 me-1" onClick={() => navigate(`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`)}>Edit</button>
+                <button className="btn btn-danger py-0 px-1 me-1" onClick={() => handleShowDelete(assignment._id)}>Delete</button>
                   <FaCheckCircle className="text-success" /><FaEllipsisV className="ms-2" /></span>
               </li>))}
-              {/* <Modal show={showDeleteModal} onHide={handleCancelDelete}>
-      <Modal.Header closeButton>
-        <Modal.Title>Confirm Deletion</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>Are you sure you want to remove this assignment?</Modal.Body>
-      <Modal.Footer>
-        <button onClick={handleCancelDelete}>
-          No
-        </button>
-        <button onClick={handleDeleteConfirmation}>
-          Yes
-        </button>
-      </Modal.Footer>
-    </Modal> */}
           </ul>
         </li>
         <li className="list-group-item p-0">
