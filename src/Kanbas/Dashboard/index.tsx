@@ -15,14 +15,28 @@ function Dashboard({ courses, course, setCourse, addNewCourse,
         <div className="p-4">
         <h1>Dashboard</h1> <hr />
         <h5> Add New Course Or Update Course</h5>
-        <input value={course.name} className="form-control"
+        <div className="row">
+          <div className="col-3">
+            Name: <input value={course.name} className="form-control"
         onChange={(e) => setCourse({ ...course, name: e.target.value })} />
-        <input value={course.number} className="form-control" 
+        </div>
+          <div className="col-3">
+        Course Number: <input value={course.number} className="form-control" 
         onChange={(e) => setCourse({ ...course, number: e.target.value }) }/>
-        <input value={course.startDate} className="form-control" type="date" 
+        </div>
+        </div>
+        <div className="row">
+        <div className="col-3">
+        <span className="d-inline">
+        Start Date:<input value={course.startDate} className="form-control" type="date" 
         onChange={(e) => setCourse({ ...course, startDate: e.target.value }) }/>
-        <input value={course.endDate} className="form-control" type="date"
+        </span>
+        </div>
+        <div className="col-3">
+        End Date:<input value={course.endDate} className="form-control" type="date"
          onChange={(e) => setCourse({ ...course, endDate: e.target.value }) } />
+        </div>
+        </div>
         <button className="btn btn-success m-1"onClick={addNewCourse} >
         Add
         </button>
