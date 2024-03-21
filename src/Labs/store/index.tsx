@@ -22,6 +22,7 @@ export interface LabState {
   todosReducer: {
     todos: TodoType[];
     todo: TodoType;
+    todosA3: TodoType[];
   };
 }
  

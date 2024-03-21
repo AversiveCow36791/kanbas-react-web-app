@@ -74,8 +74,7 @@ function ModuleList() {
 
 
             <div>
-              <FaEllipsisV className="me-2" />
-              {module.name}
+              <FaEllipsisV className="me-2" /><strong>{module.name}</strong>: {module.description}
               <span className="float-end">
               <button className="btn btn-success rounded mx-1 py-0"
               onClick={() => dispatch(setModule(module))}>
