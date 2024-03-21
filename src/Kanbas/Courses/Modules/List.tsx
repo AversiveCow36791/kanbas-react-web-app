@@ -20,6 +20,7 @@ function ModuleList() {
   const module = useSelector((state: KanbasState) => 
     state.modulesReducer.module);
   const dispatch = useDispatch();
+  const [selectedModule, setSelectedModule] = useState(moduleList[0]);
 
   return (
     <div>
@@ -70,8 +71,10 @@ function ModuleList() {
       <ul className="list-group wd-modules">
         {moduleList.filter((module) => module.course === courseId).map((module) => (
           <li
-            className="list-group-item p-0 rounded-0">
+            className="list-group-item p-0 rounded-0"
+            onClick={() => setSelectedModule(module)}>
 
+            
 
             <div>
               <FaEllipsisV className="me-2" /><strong>{module.name}</strong>: {module.description}
@@ -92,7 +95,7 @@ function ModuleList() {
               </span>
             </div>
 
-            {module.lessons?.map((lesson: { _id: string, name: string, description: string }) => (
+            {selectedModule._id === module._id && module.lessons?.map((lesson: { _id: string, name: string, description: string }) => (
               <ul className="list-group">
                   <li className="list-group-item p-0 rounded-0">
                     <FaEllipsisV className="me-2" />

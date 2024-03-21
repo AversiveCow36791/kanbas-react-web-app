@@ -3,13 +3,17 @@ import { FaBan,FaCheckCircle,FaBullseye,FaBullhorn,FaExclamation, FaCalendar, Fa
 import "../index.css";
 import "./try.css";
 import { assignments } from "../../Database";
-
+import { useSelector } from "react-redux";
+import { KanbasState } from "../../store";
 
 function Status() {
 
   const { courseId } = useParams();
-const assignmentList = assignments.filter(
-  (assignment) => assignment.course === courseId);
+const assignmentList = useSelector((state: KanbasState) => 
+  state.assignmentsReducer.assignments)
+  .filter(
+    (assignment) => assignment.course === courseId)
+    ;
 
 return (
 <div className="d-none d-xl-block">
